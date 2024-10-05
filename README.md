@@ -68,11 +68,10 @@
 
 | 機能 | 使用する技術 | 具体の使用場面 |
 | --- | --- | --- |
-| 動的OGP | Gem Meta-tags | ・Twitter等のSNSへの共有 |
-| 生成AIによるレコメンド | OpenAI API | ・場所カードのいいね実績からのレコメンド時 |
-| ランキングシステム | - | ・ユーザーごとのランキング表示
-　(場所の投稿数、投稿クオリティ) |
-| 画像投稿機能 | ActiveReacord, Minimagik | ・カード投稿時 |
+| 動的OGP | Gem Meta-tags | Twitter等のSNSへの共有 |
+| 生成AIによるレコメンド | OpenAI API | 場所カードのいいね実績からのレコメンド時 |
+| ランキングシステム | - | ユーザーごとのランキング表示(場所の投稿数、投稿クオリティ) |
+| 画像投稿機能 | ActiveReacord, Minimagik | カード投稿時 |
 
 ## 機能の実装方針予定
 
@@ -84,13 +83,8 @@
 
 | 機能 | 使用する技術 | 具体の使用場面 |
 | --- | --- | --- |
-| アカウント登録 | Devise | ・新規ユーザーの作成
-・ログイン・ログアウト時 |
-| オートコンプリート機能 | Google Places API
- | ・場所カード作成時
-・検索時 |
-| 地図上への表示 | Google Geocoding API
-Google Maps API | ・場所カード(詳細)閲覧時 |
-| 非同期通信 | Hotwire(Turbo, Stimulus) | • いいね機能
-• CRUD操作 |
-| カードの検索機能 | Runsuck | ・場所カードの検索時 |
+| アカウント登録 | Devise | 新規ユーザーの作成, ログイン, ログアウト時 |
+| オートコンプリート機能 | Google Places API  | 場所カード作成時, 検索時 |
+| 地図上への表示 | Google Geocoding API, Google Maps API | 場所カード(詳細)閲覧時 |
+| 非同期通信 | Hotwire(Turbo, Stimulus) | いいね機能, CRUD操作 |
+| カードの検索機能 | Runsuck | 場所カードの検索時 |
