@@ -13,7 +13,7 @@
 
 <aside>
 
-💡サービスの題材となるものに関してのエピソードがあれば詳しく教えて。
+💡サービスの題材となるものに関してのエピソードがあれば詳しく教えてください。
   サービスを思いつくにあたって元となる思いがあれば詳しく教えてください。
 
 </aside>
@@ -73,9 +73,31 @@
 
 </aside>
 
-使用する機能の案とそれに使用する技術(使用するAPI等)を記載している。
+使用する機能の案と対応する技術(使用するAPI等)を記載している。
+
+MVPリリース時
+
+| カテゴリー | 使用技術 |
+| --- | --- |
+| フロントエンド | TailwindCSS, daisyUI, JavaScript, Hotwire |
+| バックエンド | Ruby 3.1.2, Ruby on Rails 7.1.3 |
+| インフラ | Heroku, AmazonS3|
+| データベース | PostgreSQL |
+| API | 詳細は以下の機能表に記載|
+| CI/CD | GithubActions |
+| 開発環境 | Docker |
+
+機能表(MVPリリース時)
+| 機能 | 使用する技術 | 具体の使用場面 |
+| --- | --- | --- |
+| アカウント登録 | Devise | 新規ユーザーの作成、 ログイン・ログアウト時 |
+| オートコンプリート機能 | Google Places API | 場所カード作成時, 検索時 |
+| 非同期通信 | Hotwire(Turbo, Stimulus) | いいね機能、CRUD操作 |
+| カードの検索機能 | Runsuck | 場所カードの検索時 |
+| 画像投稿機能 | ActiveReacord, Minimagik | カード投稿時 |
 
 本リリース時
+機能表(本リリース時)
 | 機能 | 使用する技術 | 具体の使用場面 |
 | --- | --- | --- |
 | 動的OGP | Gem Meta-tags | Twitter等のSNSへの共有 |
@@ -84,11 +106,3 @@
 | 地図上への表示 | Google Geocoding API、Google Maps API | 場所カード(詳細)閲覧時 |
 
 
-MVPリリース時
-| 機能 | 使用する技術 | 具体の使用場面 |
-| --- | --- | --- |
-| アカウント登録 | Devise | 新規ユーザーの作成、 ログイン・ログアウト時 |
-| オートコンプリート機能 | Google Places API | 場所カード作成時、検索時 |
-| 非同期通信 | Hotwire(Turbo, Stimulus) | いいね機能、CRUD操作 |
-| カードの検索機能 | Runsuck | 場所カードの検索時 |
-| 画像投稿機能 | ActiveReacord, Minimagik | カード投稿時 |
