@@ -79,9 +79,9 @@ MVPリリース時
 
 | カテゴリー | 使用技術 |
 | --- | --- |
-| フロントエンド | TailwindCSS, daisyUI, JavaScript, Hotwire |
+| フロントエンド | TailwindCSS, DaisyUI, JavaScript, Hotwire |
 | バックエンド | Ruby 3.1.2, Ruby on Rails 7.1.3 |
-| インフラ | Heroku, AmazonS3|
+| インフラ | Render , Cloudinary |
 | データベース | PostgreSQL |
 | API | 詳細は以下の機能表に記載|
 | CI/CD | GithubActions |
