@@ -1,0 +1,9 @@
+
+# キャッシュファイル
+/tmp/cache/
+/app/assets/builds/
+/log/
+/tmp/cache/bootsnap/
+/config/master.key
+
+
