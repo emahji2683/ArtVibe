@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   resources :reviews
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,5 +12,10 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-   root "reviews#index"
+  root "reviews#index"
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
 end
