@@ -8,9 +8,23 @@
   <% @reviews.each do |review| %>
     <%= render review %>
     <p>
-      <%= link_to "Show this review", review %>
+    <%= link_to "Show this review", review %>
     </p>
   <% end %>
 </div>
 
 <%= link_to "New review", new_review_path, class: "btn btn-primary" %>
+<% @clients.each do |x| %>
+  <h1><%= x.name %></h1>
+  <h1><%= x.formatted_address %></h1>
+  <h1><%= x.rating %></h1>
+  <% if x.photos.present? %>
+    <div>
+      <% x.photos.each do |photo| %>
+        <img src="<%= photo %>" alt="Photo of <%= x.name %>" style="max-width: 100px;">
+      <% end %>
+    </div>
+  <% else %>
+    <p>No photos available.</p>
+  <% end %>
+<% end %>
