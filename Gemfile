@@ -39,6 +39,8 @@ gem "cssbundling-rails"
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'dotenv-rails'
+gem 'google_places'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
