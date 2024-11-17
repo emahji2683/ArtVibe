@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
     @clients = @client.spots(
       35.681236, 139.767125, # 緯度・経度 (東京駅の例)
       radius: 1000,          # 半径 1000m
-      :detail => true,
       :language => 'ja',
       keyword: '美術館'# 検索キーワード
     )

@@ -18,13 +18,17 @@
   <h1><%= x.name %></h1>
   <h1><%= x.formatted_address %></h1>
   <h1><%= x.rating %></h1>
-  <% if x.photos.present? %>
-    <div>
-      <% x.photos.each do |photo| %>
-        <img src="<%= photo %>" alt="Photo of <%= x.name %>" style="max-width: 100px;">
-      <% end %>
-    </div>
-  <% else %>
-    <p>No photos available.</p>
-  <% end %>
+<h2>Photos</h2>
+<% if x.photos.any? %>
+  <ul>
+    <% x.photos.each do |photo| %>
+      <h1><%= photo.html_attributions %></h1>
+      <% photo_url = generate_photo_url(photo) %>
+      <li><img src="<%= photo_url %>" alt="Place Photo" style="max-width: 300px;"></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No photos available.</p>
+<% end %>
+
 <% end %>
