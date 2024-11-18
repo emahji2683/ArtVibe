@@ -6,6 +6,6 @@
 /config/master.key
 /app/assets/builds
 .env
-
+.env.swp
 # Ignore master key for decrypting credentials and more.
 /config/master.key
