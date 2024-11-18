@@ -5,6 +5,7 @@
 /tmp/cache/bootsnap/
 /config/master.key
 /app/assets/builds
+/.env/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
