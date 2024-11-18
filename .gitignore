@@ -5,12 +5,7 @@
 /tmp/cache/bootsnap/
 /config/master.key
 /app/assets/builds
-<<<<<<< HEAD
 .env
-=======
-/.env
-/.env.swp
->>>>>>> 1750b23d97f49ac2bfa58243265436d7f07364a7
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
