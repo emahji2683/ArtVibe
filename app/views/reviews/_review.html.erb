@@ -1,9 +1,17 @@
 <div id="<%= dom_id review %>">
-  <p>
-  <strong>Exhibition:</strong>
-  <%= review.exhibition %>
-  </p>
-  <p>
-  <%= image_tag review.main_photo.variant(resize_to_limit: [88, 88]) if review.main_photo.attached? %>
-  </p>
+  <div class="card bg-base-100 w-96 shadow-xl">
+    <figure>
+      <%= image_tag review.main_photo.variant(resize_to_fill: [200, 200]) if review.main_photo.attached? %>
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Review</h2>
+      <p>説明文</p>
+      <strong>Exhibition:<%= review.exhibition %></strong>
+      <%= link_to "Show this review", review, class:"btn btn-sm" %>
+      <div class="card-actions justify-end">
+        <div class="badge badge-outline">タグ１</div>
+        <div class="badge badge-outline">タグ２</div>
+      </div>
+    </div>
+  </div>
 </div>

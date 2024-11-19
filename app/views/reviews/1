@@ -1,0 +1,20 @@
+<div id="<%= dom_id review %>">
+  <div class="card bg-base-100 w-96 shadow-xl">
+    <figure>
+      <%= image_tag review.main_photo.variant(resize_to_limit: [200, 200]) if review.main_photo.attached? %>
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">
+        Shoes!
+        <div class="badge badge-secondary">NEW</div>
+      </h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <strong>Exhibition:<%= review.exhibition %></strong>
+      <div class="card-actions justify-end">
+        <div class="badge badge-outline">Fashion</div>
+        <div class="badge badge-outline">Products</div>
+      </div>
+    </div>
+  </div>
+  <p><%= link_to "Show this review", review %></p>
+</div>
