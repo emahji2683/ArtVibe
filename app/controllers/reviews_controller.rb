@@ -4,13 +4,6 @@ class ReviewsController < ApplicationController
   # GET /reviews or /reviews.json
   def index
     @reviews = Review.all
-    @client = GooglePlaces::Client.new(ENV['GOOGLE_PLACES_API_KEY'])
-    @clients = @client.spots(
-      35.681236, 139.767125, # 緯度・経度 (東京駅の例)
-      radius: 1000,          # 半径 1000m
-      :language => 'ja',
-      keyword: '美術館'# 検索キーワード
-    )
   end
 
   # GET /reviews/1 or /reviews/1.json
@@ -72,6 +65,6 @@ class ReviewsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def review_params
-    params.require(:review).permit(:exhibition)
+    params.require(:review).permit(:exhibition, :main_photo, sub_photos: [] )
   end
 end

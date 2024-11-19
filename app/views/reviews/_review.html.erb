@@ -1,7 +1,9 @@
 <div id="<%= dom_id review %>">
   <p>
-    <strong>Exhibition:</strong>
-    <%= review.exhibition %>
+  <strong>Exhibition:</strong>
+  <%= review.exhibition %>
   </p>
-
+  <p>
+  <%= image_tag review.main_photo.variant(resize_to_limit: [88, 88]) if review.main_photo.attached? %>
+  </p>
 </div>
