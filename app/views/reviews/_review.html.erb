@@ -4,9 +4,6 @@
   <%= review.exhibition %>
   </p>
   <p>
-  <%= image_tag review.main_photo if review.main_photo.attached? %>
-  <% review.sub_photos.each do |photo| %>
-    <%= image_tag photo if photo.blob.present? %>
-  <% end %>
+  <%= image_tag review.main_photo.variant(resize_to_limit: [88, 88]) if review.main_photo.attached? %>
   </p>
 </div>
