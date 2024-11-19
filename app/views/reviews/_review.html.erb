@@ -1,7 +1,12 @@
 <div id="<%= dom_id review %>">
   <p>
-    <strong>Exhibition:</strong>
-    <%= review.exhibition %>
+  <strong>Exhibition:</strong>
+  <%= review.exhibition %>
   </p>
-
+  <p>
+  <%= image_tag review.main_photo if review.main_photo.attached? %>
+  <% review.sub_photos.each do |photo| %>
+    <%= image_tag photo if photo.blob.present? %>
+  <% end %>
+  </p>
 </div>
