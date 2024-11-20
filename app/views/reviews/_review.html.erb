@@ -6,7 +6,8 @@
     <div class="card-body">
       <h2 class="card-title">Review</h2>
       <p>説明文</p>
-      <strong>Exhibition:<%= review.exhibition %></strong>
+      <p>展示会:<%= review.exhibition %></p>
+      <p>作成者:<%= review.user.name %></p>
       <%= link_to "Show this review", review, class:"btn btn-sm" %>
       <div class="card-actions justify-end">
         <div class="badge badge-outline">タグ１</div>
