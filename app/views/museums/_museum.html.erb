@@ -1,0 +1,17 @@
+<div id="<%= dom_id museum %>">
+  <div class="card bg-base-100 w-96 shadow-xl">
+    <figure>
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Review</h2>
+      <p>説明文</p>
+      <p>展示会:<%= museum.name %></p>
+      <p>作成者:<%= museum.location %></p>
+      <%= link_to "Show this museum", museum, class:"btn btn-sm" %>
+      <div class="card-actions justify-end">
+        <div class="badge badge-outline">タグ１</div>
+        <div class="badge badge-outline">タグ２</div>
+      </div>
+    </div>
+  </div>
+</div>

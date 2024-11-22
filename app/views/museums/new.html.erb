@@ -1,0 +1,11 @@
+<% content_for :title, "New museum" %>
+
+<h1>New museum</h1>
+
+<%= render "form", museum: @museum %>
+
+<br>
+
+<div>
+  <%= link_to "Back to museums", museums_path %>
+</div>
