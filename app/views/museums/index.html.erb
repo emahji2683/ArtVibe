@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "museum" %>
+
+<div class="text-center flex justify-center">
+  <div class="w-full max-w-7xl px-4">
+    <!-- タイトル -->
+    <h1 class="text-7xl font-bold mb-2">Museums</h1>
+
+    <!-- 博物館リスト -->
+    <div id="museums" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% @museums.each do |museum| %>
+        <div class="bg-white p-6 rounded-lg">
+          <%= render museum %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- 新しい博物館へのリンク -->
+    <div class="mt-8">
+      <%= link_to "New Museum", new_museum_path, class: "btn btn-primary px-6 py-2 text-xl rounded-lg text-white transition duration-300" %>
+    </div>
+  </div>
+</div>
