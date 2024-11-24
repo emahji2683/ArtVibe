@@ -3,43 +3,47 @@
   <div class="flex-1">
     <%= button_to 'Artvive', reviews_path, method: :get, class:"block px-4 py-2 text-xl text-gray-700" %>
   </div>
-  <div class="flex-none gap-2">
-    <div class="form-control">
-      <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-    </div>
-    <div class="dropdown dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-        <div class="w-10 rounded-full">
-          <% if user_signed_in? %>
-            <% if current_user.avater.attached? %>
-              <%= image_tag current_user.avater %>
-            <% else %>
-              <%= image_tag 'sample.png' %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <div class="flex-none">
-          <% if user_signed_in? %>
-            <p class="block px-4 py-2 text-sm text-gray-700">Welcome, <%= current_user.email %>!</p>
-            <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class:"block px-4 py-2 text-sm text-gray-700" %>
-            <%= link_to '編集', edit_user_registration_path, class:"block px-4 py-2 text-sm text-gray-700" %>
-            <% if current_user.avater.attached? %>
-              <%= image_tag current_user.avater %>
-            <% else %>
-              <%= image_tag 'sample.png' %>
-            <% end %>
-          <% else %>
-            <%= link_to 'ログイン', new_user_session_path, class:"block px-4 py-2 text-sm text-gray-700" %>
-            <%= link_to '新規作成', new_user_registration_path, class:"block px-4 py-2 text-sm text-gray-700" %>
-          <% end %>
-        </div>
-      </ul>
-    </div>
+  <div class="flex-1 justify-end">
+    <%= button_to 'レビューへ', museums_path, method: :get, class:"block px-4 py-2 text-xl text-gray-700" %>
   </div>
+</div>
+<div class="flex-none gap-2">
+  <div class="form-control">
+    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+  </div>
+  <div class="dropdown dropdown-end">
+    <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+      <div class="w-10 rounded-full">
+        <% if user_signed_in? %>
+          <% if current_user.avater.attached? %>
+            <%= image_tag current_user.avater %>
+          <% else %>
+            <%= image_tag 'sample.png' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+      <div class="flex-none">
+        <% if user_signed_in? %>
+          <p class="block px-4 py-2 text-sm text-gray-700">Welcome, <%= current_user.email %>!</p>
+          <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class:"block px-4 py-2 text-sm text-gray-700" %>
+          <%= link_to '編集', edit_user_registration_path, class:"block px-4 py-2 text-sm text-gray-700" %>
+          <% if current_user.avater.attached? %>
+            <%= image_tag current_user.avater %>
+          <% else %>
+            <%= image_tag 'sample.png' %>
+          <% end %>
+        <% else %>
+          <%= link_to 'ログイン', new_user_session_path, class:"block px-4 py-2 text-sm text-gray-700" %>
+          <%= link_to '新規作成', new_user_registration_path, class:"block px-4 py-2 text-sm text-gray-700" %>
+        <% end %>
+      </div>
+    </ul>
+  </div>
+</div>
 </div>
 
 
