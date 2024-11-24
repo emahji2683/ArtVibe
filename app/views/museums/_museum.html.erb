@@ -4,9 +4,12 @@
     </figure>
     <div class="card-body">
       <h2 class="card-title">Review</h2>
-      <p>説明文</p>
       <p>展示会:<%= museum.name %></p>
-      <p>作成者:<%= museum.location %></p>
+      <p>住　所:<%= museum.location %></p>
+      <p>営業時間:<%= museum.business_hours %></p>
+      <p>入館料:<%= museum.admission_fees %></p>
+      <p>URL:<%= museum.website_url %></p>
+      <p>TEL:<%= museum.phone_number%></p>
       <%= link_to "Show this museum", museum, class:"btn btn-sm" %>
       <div class="card-actions justify-end">
         <div class="badge badge-outline">タグ１</div>
