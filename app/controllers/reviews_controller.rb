@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1 or /reviews/1.json
   def show
     @museum = Museum.find(params[:museum_id]) 
+    @review = @museum.reviews.find(params[:id])
   end
 
   # GET /reviews/new
@@ -69,6 +70,6 @@ class ReviewsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def review_params
-    params.require(:review).permit(:exhibition, :main_photo, sub_photos: [] )
+    params.require(:review).permit(:exhibition, :main_photo, :rating01, :body, sub_photos: [] )
   end
 end

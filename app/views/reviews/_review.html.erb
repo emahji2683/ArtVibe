@@ -4,11 +4,10 @@
       <%= image_tag review.main_photo.variant(resize_to_fill: [200, 200]) if review.main_photo.attached? %>
     </figure>
     <div class="card-body">
-      <h2 class="card-title">Review</h2>
-      <p>説明文</p>
+      <p>美術館名:<%= review.museum.name %></p>
       <p>展示会:<%= review.exhibition %></p>
       <p>作成者:<%= review.user.name %></p>
-      <%= button_to "Show this review", review_path(review), class:"btn btn-sm" %>
+      <%= link_to "Show this review", museum_review_path(review.museum, review), class: "btn btn-sm" %>
       <div class="card-actions justify-end">
         <div class="badge badge-outline">タグ１</div>
         <div class="badge badge-outline">タグ２</div>
