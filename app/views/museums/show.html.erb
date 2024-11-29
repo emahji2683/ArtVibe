@@ -1,7 +1,8 @@
 <p class="text-green-500 text-center"><%= notice %></p>
 
-<%= render @museum %>
-
+<div class="flex justify-center">
+  <%= render @museum %>
+</div>
 <div class="grid grid-cols-1 gap-4 justify-items-center mt-6">
   <%= link_to "Edit this museum", edit_museum_path(@museum), class: "btn btn-sm" %> 
   <%= link_to "Back to museums", museums_path, class: "btn btn-sm" %>
