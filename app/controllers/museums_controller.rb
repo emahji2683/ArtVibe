@@ -8,6 +8,7 @@ class MuseumsController < ApplicationController
 
   # GET /museums/1 or /museums/1.json
   def show
+    @reviews = @museum.reviews
   end
 
   # GET /museums/new

@@ -7,7 +7,9 @@
       <p>美術館名:<%= review.museum.name %></p>
       <p>展示会:<%= review.exhibition %></p>
       <p>作成者:<%= review.user.name %></p>
-      <%= link_to "Show this review", museum_review_path(review.museum, review), class: "btn btn-sm" %>
+      <% unless params[:action] == 'show' %>
+        <%= link_to "Show this review", museum_review_path(review.museum, review), class: "btn btn-sm" %>
+      <% end %>
       <div class="card-actions justify-end">
         <div class="badge badge-outline">タグ１</div>
         <div class="badge badge-outline">タグ２</div>
