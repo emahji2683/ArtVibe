@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_25_111239) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_29_035415) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_25_111239) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.bigint "museum_id"
-    t.float "rating01"
+    t.decimal "rating01", precision: 3, scale: 1
     t.text "body"
     t.index ["museum_id"], name: "index_reviews_on_museum_id"
   end
