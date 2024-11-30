@@ -1,10 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<p class="text-green-500 text-center"><%= notice %></p>
 
-<%= render @museum %>
-
-<div>
-  <%= link_to "Edit this museum", edit_museum_path(@museum) %> |
-  <%= link_to "Back to museums", museums_path %>
-
-  <%= button_to "Destroy this museum", @museum, method: :delete %>
+<div class="flex justify-center grid grid-cols-2 gap-6 p-9 grid-flow-row-dense ">
+  <%= render @museum %>
+  <div>
+    <div class="grid grid-cols-1 gap-6">
+      <% @reviews.each do |review| %>
+        <div class="p-4 border rounded shadow">
+          <p class="font-semibold"><%= review.exhibition %></p>
+          <p><%= review.body %></p>
+          <p class="text-sm text-gray-500">Posted by <%= review.user.name %> on <%= review.created_at.strftime("%Y-%m-%d") %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
