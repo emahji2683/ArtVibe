@@ -1,16 +1,26 @@
 <div id="<%= dom_id museum %>">
-  <div class="card bg-base-100 w-96 shadow-xl">
+  <div class="card bg-base-100 shadow-xl">
     <figure>
     </figure>
     <div class="card-body">
-      <h2 class="card-title">Review</h2>
       <p>展示会:<%= museum.name %></p>
       <p>住　所:<%= museum.location %></p>
       <p>営業時間:<%= museum.business_hours %></p>
       <p>入館料:<%= museum.admission_fees %></p>
       <p>URL:<%= museum.website_url %></p>
-      <p>TEL:<%= museum.phone_number%></p>
-      <%= link_to "Show this museum", museum, class:"btn btn-sm" %>
+      <p>TEL:<%= museum.phone_number %></p>
+      <div class="flex justify-end">
+        <div class="rating rating-md rating-half">
+          <input type="radio" name="review[rating01]" value="0.0" class="mask mask-star-2 mask-half-1 bg-primary" checked />
+          <input type="radio" name="review[rating01]" value="0.0" class="mask mask-star-2 mask-half-2 bg-primary" checked />
+          <p><%= museum.reviews.average(:rating01)&.round(2) || "評価なし" %></p>
+        </div>
+      </div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/2018_National_Art_Center%2C_Tokyo_2.jpg/1920px-2018_National_Art_Center%2C_Tokyo_2.jpg">
+      <% unless params[:action] == 'show' %>
+        <%= link_to "Show this museum", museum, class:"btn btn-sm" %>
+      <% end %>
+      <%= link_to "New Reviews", new_museum_review_path(museum), class:"btn btn-sm" %>
       <div class="card-actions justify-end">
         <div class="badge badge-outline">タグ１</div>
         <div class="badge badge-outline">タグ２</div>
