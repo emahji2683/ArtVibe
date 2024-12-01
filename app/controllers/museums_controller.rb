@@ -3,7 +3,8 @@ class MuseumsController < ApplicationController
 
   # GET /museums or /museums.json
   def index
-    @museums = Museum.all
+    @q = Museum.ransack(params[:q])
+    @museums = @q.result(distinct: true).order("created_at desc")
   end
 
   # GET /museums/1 or /museums/1.json
