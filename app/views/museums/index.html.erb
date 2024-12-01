@@ -5,9 +5,7 @@
 <div class="flex justify-center">
   <div class="w-full px-4">
     <div class="flex-none gap-2 m-2">
-      <div class="form-control">
-        <input type="text" placeholder="Search" class="input input-bordered md:w-auto" />
-      </div>
+      <%= render 'search', q: @q, url: museums_path %>
     </div>
     <!-- タイトル -->
     <h1 class="text-7xl font-bold mb-2 text-center">Museums</h1>
