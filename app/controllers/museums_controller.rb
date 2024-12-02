@@ -59,6 +59,11 @@ class MuseumsController < ApplicationController
     end
   end
 
+  def autocomplete
+    @search_results = Museum.where("name like ?", "%#{params[:q]}%")  # 実際にはデータベースから取得
+    render layout: false
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_museum

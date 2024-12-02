@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   resources :museums do
     resources :reviews 
   end
+  get '/autocomplete', to: 'museums#autocomplete'
 end
