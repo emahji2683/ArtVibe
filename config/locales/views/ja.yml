@@ -1,0 +1,39 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    message:
+      require_login: 'ログインしてください'
+      created: '%{item}を作成しました'
+      not_created: '%{item}の作成に失敗しました。'
+      updated: '%{item}を更新しました'
+      not_updated: '%{item}の更新に失敗しました'
+      destroyed: '%{item}を削除しました'
+      delete_confirm: '%{item}を削除してもよろしいでしょうか？'
+      not_authorized: '権限がありません'  
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+  museums:
+    index:
+      title: '美術館一覧'
+    show:
+      title: '美術館詳細'
+    new:
+      title: '投稿作成'
+    edit:
+      title: '投稿編集'
+  reviews:
+    index:
+      title: 'レビュー一覧'
+    show:
+      title: 'レビュー詳細'
+    new:
+      title: 'レビュー作成'
+    edit:
+      title: 'レビュー編集'
+  signup:
+    new:
+      title: '新規登録'
