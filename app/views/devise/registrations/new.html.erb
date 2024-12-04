@@ -1,37 +1,37 @@
-<h2><%= t('.sign_up') %></h2>
-
+<h1 class="text-3xl font-bold mt-8 mb-6 text-center"><%= t('.sign_up') %></h1>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="flex justify-center">
+    <div>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input-bordered flex items-center gap-2 w-full" %>
+      </div>
+      <div class="field">
+        <%= f.label :name %> <br />
+        <%= f.text_field :name, class: "input input-bordered flex items-center gap-2 w-full" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  #追加
-  <div class="field">
-    <%= f.label :name %> <br />
-    <%= f.text_field :name %>
-  </div>
-　#ここまで
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "input input-bordered flex items-center gap-2 w-full" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.label :avater %><br />
-    <%= f.file_field:avater %><br>
-  </div>
-  <div class="actions">
-    <%= f.submit t('.sign_up') %>
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input input-bordered flex items-center gap-2 w-full" %>
+      </div>
+      <div class="field">
+        <%= f.label :avater %><br />
+        <%= f.file_field :avater, class: "my-2"%><br>
+      </div>
+      <div class="actions text-center">
+        <%= f.submit t('.sign_up'), class: "btn" %>
+      </div>
+    </div>
   </div>
 <% end %>
 
