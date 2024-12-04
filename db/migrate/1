@@ -1,5 +1,0 @@
-class ChangeDatatypesRating01OfReviews < ActiveRecord::Migration[7.2]
-  def change
-    change_column :reviews, :rating01, :float
-  end
-end

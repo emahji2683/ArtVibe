@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      museum: '美術館'
+      review: 'レビュー'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        user_name: 'ユーザー'
+      museum:
+        name: '美術館名'
+        body: '本文'
+      review:
+        exhibition: '展示会名'
+        body: '感想'
+        rating01: '評価'
+        main_photo: 'メイン写真'
+        sub_photos: 'サブ写真'

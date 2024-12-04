@@ -1,12 +1,24 @@
-<div id="<%= dom_id review %>">
-  <div class="card bg-base-100 w-96 shadow-xl">
+<div id="<%= dom_id review %>" class="flex justify-center">
+  <div class="card bg-base-100 w-full shadow-xl">
     <figure>
       <%= image_tag review.main_photo.variant(resize_to_fill: [200, 200]) if review.main_photo.attached? %>
     </figure>
+    <figure>
+      <% if review.sub_photos.attached? %>
+        <% review.sub_photos.each do |photo| %>
+          <%= image_tag photo.variant(resize_to_fill: [100, 100]), class:"m-2" %><br> 
+
+        <% end %>
+      <% else %>
+        <img src="http://placehold.jp/150x150"><br>
+      <% end %>
+    </figure>
     <div class="card-body">
-      <p>美術館名:<%= review.museum.name %></p>
-      <p>展示会:<%= review.exhibition %></p>
-      <p>作成者:<%= review.user.name %></p>
+      <p><%= Museum.human_attribute_name(:name) %>: <%= review.museum.name %></p>
+      <p><%= Review.human_attribute_name(:exhibition) %>: <%= review.exhibition %></p>
+      <p><%= Review.human_attribute_name(:body) %>: <%= review.body %></p>
+      <p><%= Review.human_attribute_name(:rating01) %>: <%= review.rating01 %></p>
+      <p><%= User.human_attribute_name(:name) %>: <%= review.user.name %></p>
       <% unless params[:action] == 'show' %>
         <%= link_to "Show this review", museum_review_path(review.museum, review), class: "btn btn-sm" %>
       <% end %>

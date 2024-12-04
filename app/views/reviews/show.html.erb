@@ -1,7 +1,14 @@
-<p style="color: green"><%= notice %></p>
-<%= render @review %>
+<div class="w-full">
+  <div class="flex justify-center">  
+    <div class="w-96">
+      <p style="color: green"><%= notice %></p>
+      <h1 class="text-3xl font-bold m-6 text-center"><%= t('.title') %></h1>
+      <%= render partial: 'review', locals: { review: @review } %>
+      <div class="text-center mt-4">
+        <%= link_to "レビュー編集する", edit_review_path(@review) %> |
+        <%= link_to "レビュー一覧に戻る", reviews_path %>
+        <%= button_to "レビューを削除する", @review, method: :delete %>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-  <%= link_to "Edit this review", edit_review_path(@review) %> |
-  <%= link_to "Back to reviews", reviews_path %>
-  <%= button_to "Destroy this review", @review, method: :delete %>

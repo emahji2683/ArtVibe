@@ -1,14 +1,10 @@
-<p style="color: green"><%= notice %></p>
 
-<% content_for :title, "museum" %>
-
-<div class="flex justify-center">
   <div class="w-full px-4">
     <!-- 検索フォーム -->
     <%= render 'search', q: @q, url: museums_path %>
 
     <!-- タイトル -->
-    <h1 class="text-5xl font-bold mt-8 mb-6 text-center">Museums</h1>
+    <h1 class="text-3xl font-bold mt-8 mb-6 text-center"><%= t('.title') %></h1>
 
     <!-- 博物館リスト -->
     <div id="museums" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
