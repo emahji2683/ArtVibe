@@ -3,17 +3,18 @@
     <figure>
     </figure>
     <div class="card-body">
-      <p>展示会:<%= museum.name %></p>
-      <p>住　所:<%= museum.location %></p>
-      <p>営業時間:<%= museum.business_hours %></p>
-      <p>入館料:<%= museum.admission_fees %></p>
-      <p>URL:<%= museum.website_url %></p>
-      <p>TEL:<%= museum.phone_number %></p>
-      <div class="flex justify-end">
-        <div class="rating rating-md rating-half">
-          <input type="radio" name="review[rating01]" value="0.0" class="mask mask-star-2 mask-half-1 bg-primary" checked />
-          <input type="radio" name="review[rating01]" value="0.0" class="mask mask-star-2 mask-half-2 bg-primary" checked />
-          <p><%= museum.reviews.average(:rating01)&.round(2) || "評価なし" %></p>
+      <p><%= Museum.human_attribute_name(:name) %>:<%= museum.name %></p>
+      <p><%= Museum.human_attribute_name(:location) %>:<%= museum.location %></p>
+      <p><%= Museum.human_attribute_name(:business_hour) %>:<%= museum.business_hours %></p>
+      <p><%= Museum.human_attribute_name(:admission_fees) %>:<%= museum.admission_fees %></p>
+      <p><%= Museum.human_attribute_name(:website_url) %>:<%= museum.website_url %></p>
+      <p><%= Museum.human_attribute_name(:phone_number) %>:<%= museum.phone_number %></p>
+      <div class="flex justify-end items-center">
+        <div class="mr-2">
+          <p>評価：<%= museum.reviews.average(:rating01)&.round(2) || "評価なし" %></p>
+        </div>
+        <div>
+          <progress class="progress w-28 mr-4" value="<%= museum.reviews.average(:rating01)&.round(2) %>" max="5"></progress>
         </div>
       </div>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/2018_National_Art_Center%2C_Tokyo_2.jpg/1920px-2018_National_Art_Center%2C_Tokyo_2.jpg">
