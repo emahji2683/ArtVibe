@@ -12,7 +12,11 @@ ja:
         user_name: 'ユーザー'
       museum:
         name: '美術館名'
-        body: '本文'
+        location: '住所'
+        business_hour: '営業時間'
+        admission_fees: '入館料'
+        website_url: 'URL'
+        phone_number: 'TEL'
       review:
         exhibition: '展示会名'
         body: '感想'
