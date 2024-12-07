@@ -1,0 +1,11 @@
+<% if museum.favorited_by?(current_user) %>
+  <%= button_to museum_favorites_path(museum), method: :delete, data: { turbo_stream: true }, class: "favorite-button" do %>
+    <i class="fas fa-heart" style="color: red;" aria-hidden="true"></i>
+    <%= museum.favorites.count %> いいね
+  <% end %>
+<% else %>
+  <%= button_to museum_favorites_path(museum), method: :post, data: { turbo_stream: true }, class: "favorite-button" do %>
+    <i class="fas fa-heart" aria-hidden="true"></i>
+    <%= museum.favorites.count %> いいね
+  <% end %>
+<% end %>

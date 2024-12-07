@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :museums 
   resources :museums do
     resources :reviews 
+    resource :favorites, only: [:create, :destroy]
   end
   get '/autocomplete', to: 'museums#autocomplete'
 end
