@@ -25,7 +25,9 @@
       <div class="card-actions justify-end">
         <div class="badge badge-outline">タグ１</div>
         <div class="badge badge-outline">タグ２</div>
-        <td><%= render "favorites/btn", museum: museum %></td> 
+        <div id="museum_favorite_-<%= museum.id %>">
+          <td><%= render "favorites/btn", museum: museum %></td> 
+        </div>
       </div>
     </div>
   </div>
