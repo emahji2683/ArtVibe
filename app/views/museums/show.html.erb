@@ -16,3 +16,32 @@
     </div>
   </div>
 </div>
+
+<div id="map" style="height: 500px;"></div> <!-- 高さを設定 -->
+<!-- Googleマップ表示用の Javascript -->
+<script>
+  async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps");
+    const position = { lat: <%= @museum.latitude %>, lng: <%= @museum.longitude %> }
+
+    const map = new Map(document.getElementById("map"), {
+      center: position, // 位置を更新
+      zoom: 15,
+    });
+
+    marker = new google.maps.Marker({
+      position: position,
+      map: map,
+      title: "tokyo-tower",
+    });
+
+    const infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
+      content: '<div class="sample"><%= @museum.name %></div>' // 吹き出しに表示する内容
+    });
+    marker.addListener('click', function() { // マーカーをクリックしたとき
+      infoWindow.open(map, marker); // 吹き出しの表示
+    });
+  }
+</script>
+
+<script async src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap"></script>

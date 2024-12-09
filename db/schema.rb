@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_07_090044) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_08_083658) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_07_090044) do
     t.text "admission_fees"
     t.string "website_url"
     t.string "phone_number"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "posts", force: :cascade do |t|
