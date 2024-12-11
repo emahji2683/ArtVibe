@@ -49,6 +49,7 @@ gem 'rails-i18n'
 gem 'geocoder'
 gem 'csv'
 gem 'ruby-openai'
+gem 'meta-tags'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

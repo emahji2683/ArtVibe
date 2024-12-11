@@ -24,7 +24,7 @@
       <% unless params[:action] == 'show' %>
         <%= link_to "Show this review", museum_review_path(review.museum, review), class: "btn btn-sm" %>
       <% end %>
-      <div class="card-actions justify-end">
+      <% assign_meta_tags title: @post.title, image: @post.food_image.url %>      <div class="card-actions justify-end">
         <div class="badge badge-outline">タグ１</div>
         <div class="badge badge-outline">タグ２</div>
       </div>
