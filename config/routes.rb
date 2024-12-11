@@ -28,4 +28,6 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   get '/autocomplete', to: 'museums#autocomplete'
+  # プライバシーポリシー
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
 end
