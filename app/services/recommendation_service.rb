@@ -14,7 +14,7 @@ class RecommendationService
       ユーザーが以下のミュージアムを「いいね」しました:
       #{liked_museums.join("\n")}
 
-      これに基づいて、他のミュージアムやアート関連のおすすめを日本語で提案してください。
+      これに基づいて、他のミュージアムやアート関連のおすすめするHTMLを作成ください。なお、CSSはtailwindを使用しています。
     PROMPT
 
     response = @client.chat(
