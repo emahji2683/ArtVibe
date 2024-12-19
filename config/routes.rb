@@ -27,6 +27,9 @@ Rails.application.routes.draw do
     resources :reviews 
     resource :favorites, only: [:create, :destroy]
   end
+  resources :museums do
+    resources :cafes, only: [:index]  # 美術館に紐づいたカフェ表示
+  end
   get '/autocomplete', to: 'museums#autocomplete'
   # プライバシーポリシー
   get 'privacy_policy', to: 'static_pages#privacy_policy'
