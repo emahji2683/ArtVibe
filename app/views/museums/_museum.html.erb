@@ -17,11 +17,16 @@
           <progress class="progress w-28 mr-4" value="<%= museum.reviews.average(:rating01)&.round(2) %>" max="5"></progress>
         </div>
       </div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/2018_National_Art_Center%2C_Tokyo_2.jpg/1920px-2018_National_Art_Center%2C_Tokyo_2.jpg">
+      <% if museum.photo_url.present? %>
+        <%= image_tag museum.photo_url, class: "m-2" %>
+      <% else %>
+        <img src="http://placehold.jp/150x150" alt="Default Museum Image">
+      <% end %>
       <% unless params[:action] == 'show' %>
         <%= link_to "Show this museum", museum, class:"btn btn-sm" %>
       <% end %>
       <%= link_to "New Reviews", new_museum_review_path(museum), class:"btn btn-sm" %>
+      <%= link_to "CafeNearBy", museum_cafes_path(museum), class:"btn btn-sm" %>
       <div class="card-actions justify-end">
         <div class="badge badge-outline">タグ１</div>
         <div class="badge badge-outline">タグ２</div>
