@@ -17,6 +17,10 @@ ja:
         admission_fees: '入館料'
         website_url: 'URL'
         phone_number: 'TEL'
+        exhibition_rate: '展示会'
+        museum_design_rate: '外観'
+        access_rate: 'アクセスの良さ'
+        museum_shop_rate: 'ショップの充実度'
       review:
         exhibition: '展示会名'
         body: '感想'

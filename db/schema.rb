@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_08_083658) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_19_081139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_08_083658) do
     t.string "phone_number"
     t.float "latitude"
     t.float "longitude"
+    t.string "photo_url"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -76,6 +77,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_08_083658) do
     t.bigint "museum_id"
     t.decimal "rating01", precision: 3, scale: 1
     t.text "body"
+    t.float "exhibition_rate"
+    t.float "museum_design_rate"
+    t.float "access_rate"
+    t.float "museum_shop_rate"
     t.index ["museum_id"], name: "index_reviews_on_museum_id"
   end
 
