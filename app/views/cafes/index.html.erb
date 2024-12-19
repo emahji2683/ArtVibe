@@ -1,0 +1,12 @@
+<% @cafes.each do |cafe| %>
+  <div class="cafe-card">
+    <h3><%= cafe['name'] %></h3>
+    <p><%= cafe['vicinity'] %></p>
+    
+    <% if cafe['photo_url'] %>
+      <img src="<%= cafe['photo_url'] %>" alt="<%= cafe['name'] %> photo" />
+    <% else %>
+      <p>No photo available</p>
+    <% end %>
+  </div>
+<% end %>
