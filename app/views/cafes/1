@@ -1,0 +1,23 @@
+
+<h1>近くのカフェ</h1>
+
+<% if @cafes.present? %>
+  <ul>
+    <% @cafes.each do |cafe| %>
+      <li>
+        <h2><%= cafe["name"] %></h2>
+        <p>住所: <%= cafe["vicinity"] %></p>
+        <% if cafe["rating"].present? %>
+          <p>評価: <%= cafe["rating"] %> / 5</p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <% if cafe['photo_url'] %>
+    <img src="<%= cafe['photo_url'] %>" alt="<%= cafe['name'] %> photo" />
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
+<% else %>
+  <p>近くにカフェが見つかりませんでした。</p>
+<% end %>
