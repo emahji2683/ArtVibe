@@ -220,6 +220,11 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.2.200.tgz#7f56b3313762dbb85b64490aa33c5f431419aafd"
   integrity sha512-gVmi3MabEa+Bkatvw0/k1Y3WTidcIf3qNbb9L8qc+AmT2UmkVqUZhJpSLvKmH10twCYIGzn7yySW/lOpg81Duw==
 
+"@stimulus-components/content-loader@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@stimulus-components/content-loader/-/content-loader-5.0.0.tgz#93a64e2924dc2e8853ca023d6420f2123d00d816"
+  integrity sha512-5ib9PveLI9VEbUwJQpp76OW9Q1Fc8CY7Yo9iVOPTFScwtUWOQJCnwR836osLzYbEIDEEpCfBsCRcIdn9PBGT8A==
+
 ansi-regex@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz#082cb2c89c9fe8659a311a53bd6a4dc5301db304"

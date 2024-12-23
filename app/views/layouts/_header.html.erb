@@ -25,6 +25,7 @@
           <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class:"block px-4 py-2 text-sm text-gray-700" %>
           <%= link_to '編集', edit_user_registration_path, class:"block px-4 py-2 text-sm text-gray-700" %>
           <%= button_to 'プライバシーポリシー', privacy_policy_path, method:'get', class:"block px-4 py-2 text-sm text-gray-700" %>
+          <%= button_to '利用規約', rule_path, method:'get', class:"block px-4 py-2 text-sm text-gray-700" %>
           <% if current_user.avater.attached? %>
             <%= image_tag current_user.avater %>
           <% else %>

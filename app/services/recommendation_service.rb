@@ -11,10 +11,20 @@ class RecommendationService
     liked_museums = @user.favorites.joins(:museum).pluck('museums.name')
 
     prompt = <<~PROMPT
-      ユーザーが以下のミュージアムを「いいね」しました:
-      #{liked_museums.join("\n")}
+    ユーザーが以下のミュージアムを「いいね」しました:
+    #{liked_museums.join("\n")}
 
-      これに基づいて、他のミュージアムやアート関連のおすすめするHTMLを作成ください。なお、CSSはtailwindを使用しています。
+    以下の形式で他のおすすめミュージアムを3つJSON形式で返してください:
+    [
+      {
+        "name": "ミュージアム名",
+        "location": "所在地",
+        "business_hours": "営業時間",
+        "website_url": "公式サイトURL",
+        "phone_number": "電話番号",
+        "photo_url": "画像URL"
+      }
+    ]
     PROMPT
 
     response = @client.chat(
@@ -26,6 +36,7 @@ class RecommendationService
       }
     )
 
-    response.dig("choices", 0, "message", "content") || "おすすめが見つかりませんでした。"
+    ai_response = response.dig("choices", 0, "message", "content")
+    JSON.parse(ai_response) rescue []
   end
 end

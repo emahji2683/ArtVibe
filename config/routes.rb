@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
   resources :recommendations, only: [:index]
+  get 'recommendations/load_content', to: 'recommendations#load_content', as: 'load_content'
   resources :reviews 
   resources :museums 
   resources :museums do
@@ -33,4 +34,5 @@ Rails.application.routes.draw do
   get '/autocomplete', to: 'museums#autocomplete'
   # プライバシーポリシー
   get 'privacy_policy', to: 'static_pages#privacy_policy'
+  get 'rule', to: 'static_pages#rule'
 end
