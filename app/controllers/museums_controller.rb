@@ -64,6 +64,13 @@ class MuseumsController < ApplicationController
     render layout: false
   end
 
+  def favorited_museums
+    @museums = Museum.joins(:favorites).where(favorites: { user_id: current_user.id })
+    # @museumsをそのままrenderしてもビューが表示されないため、適切なビューを指定する必要があります
+    render :index  # もしくは、render 'museums/index' のようにビューを指定する
+  end
+
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_museum
