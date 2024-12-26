@@ -31,8 +31,11 @@ Rails.application.routes.draw do
   resources :museums do
     resources :cafes, only: [:index]  # 美術館に紐づいたカフェ表示
   end
+  get '/favorited', to: 'museums#favorited_museums'
   get '/autocomplete', to: 'museums#autocomplete'
   # プライバシーポリシー
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   get 'rule', to: 'static_pages#rule'
+  # トップページ
+  get 'top', to: 'top#index'
 end
