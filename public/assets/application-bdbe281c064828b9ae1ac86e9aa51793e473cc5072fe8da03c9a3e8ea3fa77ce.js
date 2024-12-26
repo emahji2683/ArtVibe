@@ -8764,4 +8764,6 @@
   Copyright © 2024 37signals LLC
    *)
 */
-//# sourceMappingURL=application.js.map
+//# sourceMappingURL=/assets/application.js-b21953b44fba1884fd7d298256239627016003d37a093ded46843122836d40b2.map
+//!
+;

@@ -1,17 +1,19 @@
-<%= search_form_for @q, url: museums_path, method: :get, html: { class: "space-y-4" } do |f| %>
-  <div class="mt-2 flex items-center relative"> <!-- 親要素に relative を追加 -->
-    <!-- 検索フィールド -->
-    <div class="flex-1">
-      <div data-controller="autocomplete" data-autocomplete-url-value="/autocomplete" >
-        <%= f.search_field :name_or_location_cont, class: "z-40 input input-bordered input-primary w-full", placeholder: "名前または場所", data: { autocomplete_target: 'input' } %>
-        <!-- ul に z-index を設定 -->
-        <ul class="list-group bg-white absolute w-full md:text-sm max-w-max z-50" data-autocomplete-target="results"></ul>
-        <%= f.hidden_field :name, data: { autocomplete_target: 'hidden' } %> 
+<% if @q.present? %>
+  <%= search_form_for @q, url: museums_path, method: :get, html: { class: "space-y-4" } do |f| %>
+    <div class="mt-2 flex items-center relative"> <!-- 親要素に relative を追加 -->
+      <!-- 検索フィールド -->
+      <div class="flex-1">
+        <div data-controller="autocomplete" data-autocomplete-url-value="/autocomplete" >
+          <%= f.search_field :name_or_location_cont, class: "z-40 input input-bordered input-primary w-full", placeholder: "名前または場所", data: { autocomplete_target: 'input' } %>
+          <!-- ul に z-index を設定 -->
+          <ul class="list-group bg-white absolute w-full md:text-sm max-w-max z-50" data-autocomplete-target="results"></ul>
+          <%= f.hidden_field :name, data: { autocomplete_target: 'hidden' } %> 
+        </div>
+      </div>
+      <!-- 検索ボタン -->
+      <div>
+        <%= f.submit "検索", class: "btn btn-primary btn-m" %>
       </div>
     </div>
-    <!-- 検索ボタン -->
-    <div>
-      <%= f.submit "検索", class: "btn btn-primary btn-m" %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
