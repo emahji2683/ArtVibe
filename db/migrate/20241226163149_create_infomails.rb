@@ -4,4 +4,7 @@ class CreateInfomails < ActiveRecord::Migration[7.2]
       t.timestamps
     end
   end
+  def down
+    remove_column :infomails, :name, :string
+  end
 end
