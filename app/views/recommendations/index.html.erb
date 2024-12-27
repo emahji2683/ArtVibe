@@ -1,21 +1,21 @@
-<div class="flex flex-col justify-center items-center min-h-screen pt-8">
-  <div>
+<div class="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+  <div class="flex flex-col justify-center items-center p-4 bg-white rounded-lg shadow-lg">
     <div
-        data-controller="content-loader"
-        data-content-loader-url-value="<%= load_content_path %>"
-        data-content-loader-lazy-loading-value="true"
-        data-content-loader-lazy-loading-root-margin-value="30px"
-        data-content-loader-lazy-loading-threshold-value="0.5"
-        data-content-loader-refresh-interval-value="3000"
-        data-content-loader-load-scripts-value="true"
-        class="flex flex-col justify-center items-center mt-8"
-        >
-        <div class="flex items-center">
-          <span class="loading loading-bars loading-lg text-4xl mr-8"></span>
-        </div>
-        <div>
-          <h1 class="ml-8">Loading comments...</h1>
-        </div>
+      data-controller="content-loader"
+      data-content-loader-url-value="<%= load_content_path %>"
+      data-content-loader-lazy-loading-value="true"
+      data-content-loader-lazy-loading-root-margin-value="30px"
+      data-content-loader-lazy-loading-threshold-value="0.5"
+      data-content-loader-refresh-interval-value="3000"
+      data-content-loader-load-scripts-value="true"
+      class="flex flex-col justify-center items-center"
+    >
+      <div class="flex items-center">
+        <span class="loading loading-bars loading-lg text-4xl"></span>
+      </div>
+      <div>
+        <h1 class="ml-8 text-xl font-semibold">Loading comments...</h1>
+      </div>
     </div>
   </div>
 </div>

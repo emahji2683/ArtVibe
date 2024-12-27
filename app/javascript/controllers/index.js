@@ -7,5 +7,5 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import LoadingIndicatorController from "./loading_indicator_controller" // 修正箇所
-application.register("loading-indicator", LoadingIndicatorController) // 変更した名前で登録
+import LoadingIndicatorController from "./loading_indicator_controller"
+application.register("loading-indicator", LoadingIndicatorController)
