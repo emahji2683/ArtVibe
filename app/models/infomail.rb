@@ -1,0 +1,2 @@
+class Infomail < ApplicationRecord
+end
