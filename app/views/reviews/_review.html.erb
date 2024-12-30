@@ -18,8 +18,8 @@
       <p><%= Museum.human_attribute_name(:name) %>: <%= review.museum.name %></p>
       <p><%= Review.human_attribute_name(:exhibition) %>: <%= review.exhibition %></p>
       <p><%= Review.human_attribute_name(:body) %>: <%= review.body %></p>
-      <p><%= Review.human_attribute_name(:rating01) %>: <%= review.rating01 %></p>
-      <progress class="progress w-56" value="<%= review.rating01 %>" max="5"></progress>
+      <p><%= Review.human_attribute_name(:rating01) %>: <%= review.calculate_average_rate %></p>
+      <progress class="progress w-56" value="<%= review.calculate_average_rate %>" max="5"></progress>
       <p><%= User.human_attribute_name(:name) %>: <%= review.user.name %></p>
       <% unless params[:action] == 'show' %>
         <%= link_to "Show this review", museum_review_path(review.museum, review), class: "btn btn-sm" %>
